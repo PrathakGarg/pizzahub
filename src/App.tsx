@@ -4,9 +4,11 @@ import Header from "./components/header/header.component";
 
 const App = () => {
   return (
-    <div>
-      <h1>Pizza Hub</h1>
-    </div>
+    <Routes>
+      <Route path="/" element={<Header />} >
+        <Route path="*" element={<h1>Not Found</h1>} />
+      </Route>
+    </Routes>
   );
 };
 
