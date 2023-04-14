@@ -6,21 +6,22 @@ import { fetchMenuStart, fetchMenuSuccess, fetchMenuFailure } from "./menu.actio
 export type MenuState = {
     menuItems: MenuItem[];
     isFetching: boolean;
-    error: string;
+    error: Error | null;
 };
 
 const INITIAL_STATE: MenuState = {
     menuItems: [],
     isFetching: false,
-    error: "",
+    error: null,
 };
 
 export const menuReducer = (state = INITIAL_STATE, action: AnyAction) => {
+    
     if (fetchMenuStart.match(action))
         return {
             ...state,
             isFetching: true,
-            error: "", 
+            error: null, 
         };
 
     if (fetchMenuSuccess.match(action))
@@ -28,7 +29,7 @@ export const menuReducer = (state = INITIAL_STATE, action: AnyAction) => {
             ...state,
             isFetching: false,
             menuItems: action.payload,
-            error: "",
+            error: null,
         };
 
     if (fetchMenuFailure.match(action))
@@ -37,5 +38,7 @@ export const menuReducer = (state = INITIAL_STATE, action: AnyAction) => {
             isFetching: false,
             error: action.payload,
         };
+
+    return state;
 }
 

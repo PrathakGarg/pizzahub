@@ -1,6 +1,8 @@
 import { createSelector } from "reselect";
 
-const selectMenu = (state: any) => state.menu;
+import { RootState } from "../store";
+
+const selectMenu = (state: RootState) => state.menu;
 
 export const selectMenuItems = createSelector(
     [selectMenu],
