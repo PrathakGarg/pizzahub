@@ -5,7 +5,7 @@ export const HeaderContainer = styled.div`
     top: 0;
     left: 0;
     width: 100%;
-    background-color: #de0027;
+    background-color: #c80f2e;
     padding: 0.001em 1rem;
     margin: 0;
     color: #fff;

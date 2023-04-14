@@ -2,7 +2,7 @@ import { useSelector } from "react-redux";
 
 import { selectMenuItems, selectMenuError, selectIsMenuFetching } from "../../store/menu/menu.selector";
 
-import MenuItem from "../../components/menu-item/menu-item.component";
+import MenuItem from "../menu-item/menu-item.component";
 import { MenuContainer } from "./menu.styles";
 
 const Menu = () => {

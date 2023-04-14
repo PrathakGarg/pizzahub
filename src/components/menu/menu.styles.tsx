@@ -7,5 +7,4 @@ export const MenuContainer = styled.div`
     justify-content: center;
     width: 100%;
     height: 100%;
-    padding: 5rem 0 0 0;
 `;

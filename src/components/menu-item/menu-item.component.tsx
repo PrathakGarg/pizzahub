@@ -2,8 +2,9 @@ import { FC } from "react"
 import { BiCheckboxSquare } from "react-icons/bi"
 
 import { MenuItem as Item } from "../../store/menu/menu.types"
+import { MenuItemContainer, MenuItemDetails, MenuItemImage, MenuItemTitle } from "./menu-item.styles"
 
-import { MenuItemContainer } from "./menu-item.styles"
+import Rating from "../rating/rating.component"
 
 type MenuItemProps = {
     item: Item
@@ -11,10 +12,17 @@ type MenuItemProps = {
 
 const MenuItem: FC<MenuItemProps> = ({ item }) => (
     <MenuItemContainer>
-        <h1>{item.name}</h1>
-        <BiCheckboxSquare style={{color: (item.isVeg ? 'green':'red')}} />
-        <p>{item.description}</p>
-        <p>{`₹${item.price}`}</p>
+        <MenuItemImage src={`${item.img_url}`} />
+        <MenuItemDetails>
+            <MenuItemTitle>
+                <BiCheckboxSquare style={{color: (item.isVeg ? 'green':'red'), width: "1.5em", height: "1.5em"}} />
+                <p>{item.name}</p>
+            </MenuItemTitle>
+
+            <p>{item.description}</p>
+            <Rating rating={item.rating} />
+            <p>{`₹${item.price}`}</p>
+        </MenuItemDetails>
     </MenuItemContainer>
 )
 

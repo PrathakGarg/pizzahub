@@ -26,7 +26,7 @@ export type MenuItem = {
     isVeg: boolean;
     rating: number;
     price: number;
-    imageUrl: string;
+    img_url: string;
     size: PizzaSizes;
     toppings: PizzaToppings;
 }

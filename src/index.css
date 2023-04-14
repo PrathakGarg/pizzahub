@@ -1,6 +1,7 @@
 body {
   margin: auto;
   background-color: #D6D6D6;
+  background-image: url('src/assets/bg-app.jpg');
 }
 
 :root {
