@@ -1,10 +1,10 @@
+import { HeaderContainer } from "./header.styles";
+
 const Header = () => {
     return (
-        <>
-        <header>
+        <HeaderContainer>
             <h1>Pizza Hub</h1>
-        </header>
-        </>
+        </HeaderContainer>
     );
 };
 

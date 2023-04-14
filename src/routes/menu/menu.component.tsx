@@ -3,27 +3,32 @@ import { useSelector } from "react-redux";
 import { selectMenuItems, selectMenuError, selectIsMenuFetching } from "../../store/menu/menu.selector";
 
 import MenuItem from "../../components/menu-item/menu-item.component";
+import { MenuContainer } from "./menu.styles";
 
 const Menu = () => {
     const menuItems = useSelector(selectMenuItems);
     const menuError = useSelector(selectMenuError);
     const isMenuFetching = useSelector(selectIsMenuFetching);
 
-    if (menuError !== null) {
-        console.log(menuError);
-        return <h1>Error getting the menu. Please try again.</h1>;
-    }
-
     if (isMenuFetching) {
-        return <h1>Loading...</h1>;
+        return (
+            <MenuContainer>
+                <div>Loading...</div>
+            </MenuContainer>
+        )
     }
 
     return (
-        <div>
+        <MenuContainer>
+            {menuError && (
+                <div>
+                    There was an error getting the menu
+                </div>
+            )}
             {menuItems.map((item) => (
                 <MenuItem key={item.id} item={item} />
             ))}
-        </div> 
+        </MenuContainer> 
     );
 };
 
