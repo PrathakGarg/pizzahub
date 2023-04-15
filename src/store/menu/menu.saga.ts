@@ -1,4 +1,4 @@
-import { takeLatest, call, put, all } from "redux-saga/effects";
+import { takeLatest, call, put, all } from "typed-redux-saga";
 
 import { fetchMenuSuccess, fetchMenuFailure } from "./menu.action";
 import { MENU_ACTION_TYPES } from "./menu.types";
@@ -6,7 +6,7 @@ import { getMenuItems } from "../../utils/api/api.utils";
 
 function* fetchMenuItems() {
     try {
-        const menuItems = yield call(getMenuItems);
+        const menuItems = yield* call(getMenuItems);
         yield put(fetchMenuSuccess(menuItems));
     } catch (error) {
         yield put(fetchMenuFailure(error as Error));
