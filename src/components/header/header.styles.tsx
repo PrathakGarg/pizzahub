@@ -7,6 +7,7 @@ export const HeaderContainer = styled.div`
     left: 0;
     width: 100%;
     background-color: #c80f2e;
+    // background-color: #000;
     padding: 0.001em 1rem;
     margin: 0;
     z-index: 100;
@@ -20,6 +21,7 @@ export const HeaderContainer = styled.div`
         text-transform: uppercase;
         text-align: center;
         color: #fff;
+        cursor: pointer;
     }
 
     
@@ -56,22 +58,47 @@ export const HeaderContainer = styled.div`
         color: #fff;
         cursor: pointer;
 
+        span {
+            position: absolute;
+            top: -0.15em;
+            right: 1.1em;
+            font-size: 1.8rem;
+            font-weight: 300;
+            color: #fff;
+            border-radius: 50%;
+            padding: 0.1em 0.3em;
+        }
+
         @media screen and (min-width: 768px) {
             font-size: 2.5rem;
-
             right: 2em;
+
+            span {
+                font-size: 2.4rem;
+                top: -0.2em;
+                right: 1.1em;
+            }
         }
 
         @media screen and (min-width: 1024px) {
             font-size: 3rem;
-            
             right: 2.7em;
+
+            span {
+                font-size: 3.3rem;
+                top: -0.25em;
+            }
         }
 
         @media screen and (min-width: 1440px) {
             font-size: 3.5rem;
-
             right: 3em;
+
+            span {
+                font-size: 4rem;
+                top: -0.3em;
+                right: 0.9em;
+            }
         }
     }
 `;

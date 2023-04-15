@@ -27,7 +27,7 @@ const MenuItem: FC<MenuItemProps> = ({ item }) => (
                     <Rating rating={item.rating} />
                     <p>{`₹${item.price}`}</p>
                 </div>
-                <AddToCartButton />
+                <AddToCartButton item={item} />
             </MenuItemMeta>
         </MenuItemDetails>
     </MenuItemContainer>

@@ -6,7 +6,7 @@ const Footer = () => {
             <FooterText>
                 Made with <span>❤</span> by {"Team Phoenix"}
             </FooterText>
-            <FooterLink href=" " rel="noopener noreferrer">
+            <FooterLink href="/" rel="noopener noreferrer">
                 {"pizzahub.com"}
             </FooterLink>
         </FooterContainer>
