@@ -5,7 +5,7 @@ import PizzaHeader from "../../assets/header_pasta_pizza.jpg";
 export const HomePageContainer = styled.div`
     display: flex;
     flex-direction: column;
-    padding: 5rem 0 0 0;
+    padding: 0;
     width: 100%;
     height: 100%;
 `

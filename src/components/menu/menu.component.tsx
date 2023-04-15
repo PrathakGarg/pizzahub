@@ -1,9 +1,10 @@
 import { useSelector } from "react-redux";
+import { Modal } from "antd";
 
 import { selectMenuItems, selectMenuError, selectIsMenuFetching } from "../../store/menu/menu.selector";
+import { MenuContainer } from "./menu.styles";
 
 import MenuItem from "../menu-item/menu-item.component";
-import { MenuContainer } from "./menu.styles";
 
 const Menu = () => {
     const menuItems = useSelector(selectMenuItems);
@@ -18,17 +19,27 @@ const Menu = () => {
         )
     }
 
+    if (menuError !== null && menuError !== undefined && menuError.message !== undefined) {
+        console.log(menuError)
+        Modal.error({
+            title: "Error",
+            content: (
+                <div>
+                    <p>{menuError.message}</p>
+                    <p>Please try again later.</p>
+                </div>
+            ),
+            // icon: <MdError />,
+            okText: "OK",
+        });
+    }
+
     return (
         <MenuContainer>
-            {menuError && (
-                <div>
-                    There was an error getting the menu
-                </div>
-            )}
             {menuItems.map((item) => (
                 <MenuItem key={item.id} item={item} />
             ))}
-        </MenuContainer> 
+        </MenuContainer>
     );
 };
 

@@ -11,7 +11,7 @@ const INITIAL_STATE: CartState = {
     cartItems: [],
 };
 
-const cartReducer = (state: CartState = INITIAL_STATE, action: any): CartState => {
+export const cartReducer = (state: CartState = INITIAL_STATE, action: any): CartState => {
     if (toggleHidden.match(action)) {
         return {
             ...state,

@@ -5,6 +5,7 @@ export const MenuItemContainer = styled.div`
     align-items: center;
     justify-content: center;
     width: 50%;
+    min-width: 30em;
     height: 100%;
     border: 1px solid black;
     background-color: #eaeaea;
