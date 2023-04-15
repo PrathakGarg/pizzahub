@@ -9,6 +9,7 @@ export const HeaderContainer = styled.div`
     padding: 0.001em 1rem;
     margin: 0;
     color: #fff;
+    text-shadow: 0 0 0.5em #00000055;
 
 
     h1 {

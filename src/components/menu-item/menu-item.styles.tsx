@@ -51,3 +51,14 @@ export const MenuItemTitle = styled.div`
         padding: 0 0 0.1em 0;
     }
 `;
+
+export const MenuItemMeta = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    gap: 0.5em;
+`;
